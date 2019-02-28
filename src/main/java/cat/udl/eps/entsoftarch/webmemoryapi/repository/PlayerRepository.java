@@ -1,6 +1,6 @@
-package cat.udl.eps.entsoftarch.webingogeiadeapi.repository;
+package cat.udl.eps.entsoftarch.webmemoryapi.repository;
 
-import cat.udl.eps.entsoftarch.webingogeiadeapi.domain.Player;
+import cat.udl.eps.entsoftarch.webmemoryapi.domain.Player;
 import java.util.List;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;

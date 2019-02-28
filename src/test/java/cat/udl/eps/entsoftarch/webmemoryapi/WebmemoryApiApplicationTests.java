@@ -1,4 +1,4 @@
-package cat.udl.eps.entsoftarch.webingogeiadeapi;
+package cat.udl.eps.entsoftarch.webmemoryapi;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class WebingoGeiAdeApiApplicationTests {
+public class WebmemoryApiApplicationTests {
 
 	@Test
 	public void contextLoads() {

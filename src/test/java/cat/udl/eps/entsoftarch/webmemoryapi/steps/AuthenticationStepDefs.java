@@ -1,4 +1,4 @@
-package cat.udl.eps.entsoftarch.webingogeiadeapi.steps;
+package cat.udl.eps.entsoftarch.webmemoryapi.steps;
 
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.anonymous;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.httpBasic;

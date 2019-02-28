@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>cat.udl.eps.entsoftarch</groupId>
-	<artifactId>webingo-geiade-api</artifactId>
+	<artifactId>webmemory-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>webingo-geiade-api</name>
-	<description>Web Bingo API</description>
+	<name>webmemory-api</name>
+	<description>Web Memory API</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

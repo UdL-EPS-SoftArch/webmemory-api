@@ -1,4 +1,4 @@
-package cat.udl.eps.entsoftarch.webingogeiadeapi.steps;
+package cat.udl.eps.entsoftarch.webmemoryapi.steps;
 
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;

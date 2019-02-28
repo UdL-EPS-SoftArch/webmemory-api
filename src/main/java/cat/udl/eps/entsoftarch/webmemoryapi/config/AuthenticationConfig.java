@@ -1,10 +1,10 @@
-package cat.udl.eps.entsoftarch.webingogeiadeapi.config;
+package cat.udl.eps.entsoftarch.webmemoryapi.config;
 
-import cat.udl.eps.entsoftarch.webingogeiadeapi.domain.Admin;
-import cat.udl.eps.entsoftarch.webingogeiadeapi.domain.Player;
-import cat.udl.eps.entsoftarch.webingogeiadeapi.domain.User;
-import cat.udl.eps.entsoftarch.webingogeiadeapi.repository.AdminRepository;
-import cat.udl.eps.entsoftarch.webingogeiadeapi.repository.PlayerRepository;
+import cat.udl.eps.entsoftarch.webmemoryapi.domain.Admin;
+import cat.udl.eps.entsoftarch.webmemoryapi.domain.Player;
+import cat.udl.eps.entsoftarch.webmemoryapi.domain.User;
+import cat.udl.eps.entsoftarch.webmemoryapi.repository.AdminRepository;
+import cat.udl.eps.entsoftarch.webmemoryapi.repository.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -29,7 +29,7 @@ public class AuthenticationConfig extends GlobalAuthenticationConfigurerAdapter 
 
     if (!adminRepository.existsById("admin")) {
       Admin admin = new Admin();
-      admin.setEmail("admin@webingo.org");
+      admin.setEmail("admin@webmemory.org");
       admin.setUsername("admin");
       admin.setPassword(defaultPassword);
       admin.encodePassword();
@@ -37,7 +37,7 @@ public class AuthenticationConfig extends GlobalAuthenticationConfigurerAdapter 
     }
     if (!playerRepository.existsById("user")) {
       Player user = new Player();
-      user.setEmail("user@webingo.org");
+      user.setEmail("user@webmemory.org");
       user.setUsername("user");
       user.setPassword(defaultPassword);
       user.encodePassword();

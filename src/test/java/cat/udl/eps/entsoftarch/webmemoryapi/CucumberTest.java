@@ -1,4 +1,4 @@
-package cat.udl.eps.entsoftarch.webingogeiadeapi;
+package cat.udl.eps.entsoftarch.webmemoryapi;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;

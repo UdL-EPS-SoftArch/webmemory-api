@@ -1,4 +1,4 @@
-package cat.udl.eps.entsoftarch.webingogeiadeapi.domain;
+package cat.udl.eps.entsoftarch.webmemoryapi.domain;
 
 import java.util.Collection;
 import javax.persistence.Entity;

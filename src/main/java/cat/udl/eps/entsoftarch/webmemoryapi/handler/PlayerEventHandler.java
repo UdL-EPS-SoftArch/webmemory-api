@@ -1,7 +1,7 @@
-package cat.udl.eps.entsoftarch.webingogeiadeapi.handler;
+package cat.udl.eps.entsoftarch.webmemoryapi.handler;
 
-import cat.udl.eps.entsoftarch.webingogeiadeapi.domain.Player;
-import cat.udl.eps.entsoftarch.webingogeiadeapi.repository.PlayerRepository;
+import cat.udl.eps.entsoftarch.webmemoryapi.domain.Player;
+import cat.udl.eps.entsoftarch.webmemoryapi.repository.PlayerRepository;
 import javax.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

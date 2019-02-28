@@ -1,4 +1,4 @@
-package cat.udl.eps.entsoftarch.webingogeiadeapi.domain;
+package cat.udl.eps.entsoftarch.webmemoryapi.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.Entity;

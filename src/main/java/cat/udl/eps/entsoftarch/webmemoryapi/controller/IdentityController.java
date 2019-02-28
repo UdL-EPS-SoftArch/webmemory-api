@@ -1,6 +1,6 @@
-package cat.udl.eps.entsoftarch.webingogeiadeapi.controller;
+package cat.udl.eps.entsoftarch.webmemoryapi.controller;
 
-import cat.udl.eps.entsoftarch.webingogeiadeapi.domain.User;
+import cat.udl.eps.entsoftarch.webmemoryapi.domain.User;
 import org.springframework.data.rest.webmvc.BasePathAwareController;
 import org.springframework.data.rest.webmvc.PersistentEntityResource;
 import org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler;

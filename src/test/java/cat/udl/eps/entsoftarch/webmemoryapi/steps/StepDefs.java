@@ -1,4 +1,4 @@
-package cat.udl.eps.entsoftarch.webingogeiadeapi.steps;
+package cat.udl.eps.entsoftarch.webmemoryapi.steps;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.hasItem;
@@ -6,7 +6,7 @@ import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import cat.udl.eps.entsoftarch.webingogeiadeapi.WebingoGeiAdeApiApplication;
+import cat.udl.eps.entsoftarch.webmemoryapi.WebmemoryApiApplication;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import cucumber.api.java.Before;
@@ -27,7 +27,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 @ContextConfiguration(
-	classes = {WebingoGeiAdeApiApplication.class},
+	classes = {WebmemoryApiApplication.class},
 	loader = SpringBootContextLoader.class
 )
 @DirtiesContext

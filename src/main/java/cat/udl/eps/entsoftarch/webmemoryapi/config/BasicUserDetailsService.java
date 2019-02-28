@@ -1,6 +1,6 @@
-package cat.udl.eps.entsoftarch.webingogeiadeapi.config;
+package cat.udl.eps.entsoftarch.webmemoryapi.config;
 
-import cat.udl.eps.entsoftarch.webingogeiadeapi.repository.UserRepository;
+import cat.udl.eps.entsoftarch.webmemoryapi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

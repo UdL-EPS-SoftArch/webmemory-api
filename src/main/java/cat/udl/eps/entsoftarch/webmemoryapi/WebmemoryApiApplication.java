@@ -1,13 +1,13 @@
-package cat.udl.eps.entsoftarch.webingogeiadeapi;
+package cat.udl.eps.entsoftarch.webmemoryapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WebingoGeiAdeApiApplication {
+public class WebmemoryApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(WebingoGeiAdeApiApplication.class, args);
+		SpringApplication.run(WebmemoryApiApplication.class, args);
 	}
 
 }

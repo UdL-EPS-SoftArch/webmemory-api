@@ -1,7 +1,7 @@
-package cat.udl.eps.entsoftarch.webingogeiadeapi.config;
+package cat.udl.eps.entsoftarch.webmemoryapi.config;
 
-import cat.udl.eps.entsoftarch.webingogeiadeapi.domain.Admin;
-import cat.udl.eps.entsoftarch.webingogeiadeapi.domain.Player;
+import cat.udl.eps.entsoftarch.webmemoryapi.domain.Admin;
+import cat.udl.eps.entsoftarch.webmemoryapi.domain.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;

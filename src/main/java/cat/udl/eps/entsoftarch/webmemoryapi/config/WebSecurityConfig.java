@@ -1,4 +1,4 @@
-package cat.udl.eps.entsoftarch.webingogeiadeapi.config;
+package cat.udl.eps.entsoftarch.webmemoryapi.config;
 
 import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Value;
