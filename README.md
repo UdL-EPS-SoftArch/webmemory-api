@@ -1,16 +1,16 @@
-# WEBingo - Web Bingo - API
+# WebMemory - WebMemory - API
 
-[![Build Status](https://travis-ci.org/rhizomik/webingo-geiade-api.svg?branch=master)](https://travis-ci.org/rhizomik/webingo-geiade-api/branches) 
+[![Build Status](https://travis-ci.org/rhizomik/webmemory-api.svg?branch=master)](https://travis-ci.org/rhizomik/webmemory-api/branches) 
 
 ## Vision
 
 **For** players **who** want to ...
 
-**the project** WEBingo **is a** ...
+**the project** WebMemory **is a** ...
 
 **that** allows them to ...
 
-**Unlike** existing tools, WEBingo ...
+**Unlike** existing tools, WebMemory ...
 
 
 ## Features per Stakeholder
