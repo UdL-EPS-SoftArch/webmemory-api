@@ -1,6 +1,6 @@
 # WebMemory - WebMemory - API
 
-[![Build Status](https://travis-ci.org/rhizomik/webmemory-api.svg?branch=master)](https://travis-ci.org/rhizomik/webmemory-api/branches) 
+[![Build Status](https://travis-ci.org/UdL-EPS-SoftArch/webmemory-api.svg?branch=master)](https://travis-ci.org/UdL-EPS-SoftArch/webmemory-api/branches) 
 
 ## Vision
 
