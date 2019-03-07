@@ -23,13 +23,8 @@
 | Send friend request           |                                 |
 | Accept friend request         |                                 |
 | Decline friend request        |                                 |
-|                               |                                 |
-|                               |                                 |
-|                               |                                 |
-|                               |                                 |
-|                               |                                 |
-|                               |                                 |
+
 
 ## Entities Model
 
-![Entity model image](assets/UML_DIAGRAM.png)
+![Entity model image](/assets/UML_DIAGRAM.png?raw=true)
