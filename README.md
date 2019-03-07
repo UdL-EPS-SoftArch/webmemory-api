@@ -4,20 +4,20 @@
 
 ## Vision
 
-**For** players **who** want to ...
+For players who want to play a multiplayer memory game
 
-**the project** WebMemory **is a** ...
+The project is a **competitive online game**
 
-**that** allows them to ...
+Allows other players to play with friends and earn rewards
 
-**Unlike** existing tools, WebMemory ...
+Unlike existing memory games that are mainly played localy and by two players only
 
 
 ## Features per Stakeholder
 
 | Player                        | Admin                           |
 | ------------------------------| --------------------------------|
-| ...                           | Register Player                 |
+|                               |                                 |
 |                               | ...                             |
 |                               |                                 |
 |                               |                                 |
