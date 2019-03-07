@@ -15,13 +15,13 @@ Unlike existing memory games that are mainly played localy and by two players on
 
 ## Features per Stakeholder
 
-| Player                        | Admin                           |
-| ------------------------------| --------------------------------|
-|                               |                                 |
-|                               | ...                             |
-|                               |                                 |
-|                               |                                 |
-|                               |                                 |
+| Player                        | Admin                           | Server                          |
+| ------------------------------| --------------------------------| --------------------------------|
+| **REGISTRATION**              |                                 | **CREATE GAME**
+| **LOGIN**                     |                                 | **REGISTER PLAYER**
+| **JOIN GAME**                 |                                 | 
+| **SEND/ACCEPT FRIEND INVITES  |                                 |
+| **LEAVE GAME**                |                                 |
 |                               |                                 |
 |                               |                                 |
 |                               |                                 |
