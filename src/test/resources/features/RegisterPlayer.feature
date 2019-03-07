@@ -15,6 +15,12 @@ Feature: Register Player
     Then The response code is 401
     And It has not been created a player with username "player"
 
+  Scenario: Register new player as player
+    Given I login as "player" with password "password"
+    When I register a new player with username "newPlayer", email "email@email.com" and password "password"
+    Then The response code is 403
+    And Player with username "newPlayer" has not been created
+
   Scenario: Register new player with empty password
     Given I login as "admin" with password "password"
     When I register a new player with username "player", email "player@webmemory.org" and password ""
