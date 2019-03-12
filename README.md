@@ -19,8 +19,8 @@
 | ------------------------------| --------------------------------|
 | Join game                     | Register Player                 |
 | Leave game                    | Delete Player                   |
-| Send funds to other player    | Set Player funds                |
-| Send friend request           |                                 |
+| Send funds to other player    | Edit Player                     |
+| Send friend request           | Set Player funds                |
 | Accept friend request         |                                 |
 | Decline friend request        |                                 |
 
