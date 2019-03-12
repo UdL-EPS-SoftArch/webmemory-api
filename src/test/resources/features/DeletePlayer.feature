@@ -5,13 +5,13 @@ Feature: Register Player
 
   Scenario: Delete existing player as an admin
     Given I login as "admin" with password "password"
-    And I register player with username "newPlayer", email "email@email.com" and password "password"
+    And I register player with username "newPlayer", email "newPlayer@webmemory.org" and password "password"
     When I delete player with username "newPlayer"
     Then The response code is 204
 
   Scenario: Delete existing player as a player
     Given I login as "admin" with password "password"
-    And I register player with username "newPlayer", email "email@email.com" and password "password"
+    And I register player with username "newPlayer", email "newPlayer@webmemory.org" and password "password"
     Given I login as "player" with password "password"
     When I delete a player with username "newPlayer"
     Then The response code is 403
