@@ -61,8 +61,6 @@ package Users <<Layout>> {
    }
 }
 
-Player "n" --|> "1" Game : plays
-
 Player " " --|> " " User
 
 Admin " " --|> " " User
