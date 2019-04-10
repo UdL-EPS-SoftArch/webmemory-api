@@ -12,7 +12,6 @@ unlike existing memory games that are mainly played localy and by two players on
 our game has the same capacity our servers have, meaning a lot of players can play the game simultaneously
 
 
-
 ## Features per Stakeholder
 
 | Player                        | Admin                           | Server                          |
@@ -22,14 +21,4 @@ our game has the same capacity our servers have, meaning a lot of players can pl
 | **JOIN GAME**                 | **GIVE PLAYER MONEY**           | **DAILY MONEY REWARDS**
 | **SEND/ACCEPT FRIEND INVITES  | **EDIT ADMIN PROFILES**         |
 | **LEAVE GAME**                |                                 |
-|                               |                                 |
-|                               |                                 |
-|                               |                                 |
-|                               |                                 |
-|                               |                                 |
-|                               |                                 |
-|                               |                                 |
 
-## Entities Model
-
-...
