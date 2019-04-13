@@ -1,10 +1,11 @@
 package cat.udl.eps.entsoftarch.webmemoryapi.domain;
 
 import java.util.Collection;
-import javax.persistence.Entity;
-import javax.persistence.Transient;
+import javax.persistence.*;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 
@@ -12,6 +13,23 @@ import org.springframework.security.core.authority.AuthorityUtils;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class Player extends User {
+
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public int playerId;
+
+	@Length(min=2, max=256)
+	public String Name;
+
+	public  float Currency;
+
+	public int getPlayerId(){return this.playerId;}
+
+	@Override
+	public String getUsername(){return this.Name;}
+
+	public float getCurrency(){return this.Currency;}
 
 	@Override
 	@Transient

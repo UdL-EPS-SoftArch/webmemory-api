@@ -31,7 +31,7 @@ Feature: Register Player
 
   Scenario: Register new player with invalid email
     Given I login as "admin" with password "password"
-    When I register a new player with username "player", email "playerawebmemory.org" and password "password"
+    When I register a new player with username "player", email "player@webmemory.org" and password "password"
     Then The response code is 400
     And The error message is "must be a well-formed email address"
     And It has not been created a player with username "player"

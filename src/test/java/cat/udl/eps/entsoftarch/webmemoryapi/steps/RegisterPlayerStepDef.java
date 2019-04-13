@@ -36,7 +36,7 @@ public class RegisterPlayerStepDef {
             .accept(MediaType.APPLICATION_JSON)
             .with(AuthenticationStepDefs.authenticate()))
         .andDo(print());
-  }
+}
 
   @And("^It has been created a player with username \"([^\"]*)\" and email \"([^\"]*)\", the password is not returned$")
   public void itHasBeenCreatedAPlayer(String username, String email) throws Throwable {
