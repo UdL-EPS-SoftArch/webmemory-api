@@ -1,8 +1,6 @@
 package cat.udl.eps.entsoftarch.webmemoryapi.steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.When;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 
