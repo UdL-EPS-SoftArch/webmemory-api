@@ -19,6 +19,6 @@ our game has the same capacity our servers have, meaning a lot of players can pl
 | **REGISTRATION**              | **REGISTER/EDIT PLAYERS**       | **CREATE GAME**
 | **LOGIN**                     | **CREATES/EDITS ROOMS**         | **REGISTER PLAYER**
 | **JOIN GAME**                 | **GIVE PLAYER MONEY**           | **DAILY MONEY REWARDS**
-| **SEND/ACCEPT FRIEND INVITES  | **EDIT ADMIN PROFILES**         |
+| **SEND/ACCEPT FRIEND INVITES**| **EDIT ADMIN PROFILES**         |
 | **LEAVE GAME**                |                                 |
 
