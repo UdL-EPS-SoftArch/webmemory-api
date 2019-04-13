@@ -32,6 +32,8 @@ class User <<User>> {
 package Users <<Layout>>{
   class Player <<User>> {
      currency:float
+     Friends: List<Player>
+     PlayedGames: List<Game>
 
   }
 
@@ -48,29 +50,13 @@ class Game <<Game>> {
 
 }
 
-package Users <<Layout>> {
-   class Player_Friends <<User>> {
-       Player: Player
-       Friend: Player
-   }
 
-   class Player_Games <<User>> {
-       Player: Player
-       Game: Game
-       Result: string
-   }
-}
+Player "n" --> "n" Player : Is friends with
 
-Player "n" --|> "1" Game : plays
-
-Player " " --|> " " User
+Game "1" <-- "n" Player : Joins
 
 Admin " " --|> " " User
 
-Player "n" --|> "n" Player_Friends : is_friend
-
-Game "n" --|> "n" Player_Games : was_played
-
-Player "n" --|> "n" Player_Games : has_played
+Player " " --|> " " User
 
 @enduml
