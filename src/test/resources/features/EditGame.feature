@@ -3,13 +3,14 @@ Feature: Edit Game
   As an admin
   I want to edit a created game
 
-  Scenario: Edit game as an admin
+  Scenario: Edit game reward as an admin
     Given I login as "admin" with password "password"
-    When I set the buy-in value 1 of game
+    When I create a game with the id "game1"
+    And I set the reward value 100 of game with the id "game1"
     Then The response code is 200
 
-  Scenario: Edit game as an admin with currency less than zero
+  Scenario: Stop a current game as admin
     Given I login as "admin" with password "password"
-    And I set the buy-in value 1 of game
-    When I set the buy-in value 1 of game "game1" to less than zero
-    Then The response code is 409
+    When I create a game with the id "game1"
+    And I stop a game with the id "game1"
+    Then The response code is 200

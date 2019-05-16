@@ -3,12 +3,18 @@ Feature: Delete Game
   As an admin
   I want to delete a game
 
-  Scenario: Admin tries to delete a game not started
+  Scenario: Admin tries to delete a finished game
     Given I login as "admin" with password "password"
-    And I create a game with the name "game1"
-    When I delete a game with id "game1"
-    Then The response code is 204
+    When I create a game with the id "game1"
+    And I stop a game with the id "game1"
+    And I delete a game with id "game1"
     And The game with id "game1" does not exist
+
+  Scenario: Admin tries to delete a game not finished
+    Given I login as "admin" with password "password"
+    When I create a game with the id "game1"
+    And I delete a game with id "game1"
+    Then The response code is 403
 
   Scenario: Remove a game that does not exist
     Given I login as "admin" with password "password"

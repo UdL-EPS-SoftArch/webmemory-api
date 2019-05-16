@@ -18,36 +18,26 @@ public class CreateGameStepDef {
     @Autowired
     private StepDefs stepDefs;
 
-    @When("^I create a game with the name \"([^\"]*)\"$")
-    public void iCreateAGameWithTheName(String name) throws Throwable {
+    @When("^I create a game with the id \"([^\"]*)\"$")
+    public void iCreateAGameWithTheID(String name) throws Throwable {
         JSONObject newGame = new JSONObject();
-        newGame.put("name", name);
+        newGame.put("GameId", name);
         stepDefs.result = stepDefs.mockMvc.perform(
                 post("/games").contentType(MediaType.APPLICATION_JSON).content(newGame.toString()).accept(MediaType.APPLICATION_JSON).with(AuthenticationStepDefs.authenticate()))
                 .andDo(print());
     }
 
     @And("^A game with the id and name \"([^\"]*)\" has been created$")
-    public void aGameWithTheIdAndNameHasBeenCreated(String gameName) throws Throwable {
+    public void aGameWithTheIdAndNameHasBeenCreated(String id) throws Throwable {
         stepDefs.result = stepDefs.mockMvc.perform(
-                get("/games/{id}", gameName).accept(MediaType.APPLICATION_JSON).with(AuthenticationStepDefs.authenticate())).andDo(print());
+                get("/games/{id}", id).accept(MediaType.APPLICATION_JSON).with(AuthenticationStepDefs.authenticate())).andDo(print());
     }
 
-    @When("^I create a new game with the name \"([^\"]*)\" but the name already exists$")
-    public void iCreateANewGameWithTheNameButTheNameAlreadyExists(String gameName) throws Throwable {
-        stepDefs.result = stepDefs.mockMvc.perform(
-                delete("/games/{id}", gameName)
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .accept(MediaType.APPLICATION_JSON)
-                        .with(AuthenticationStepDefs.authenticate()))
-                .andDo(print()).andExpect(status().isConflict());
-    }
-
-    @When("^I create a new game with the name \"([^\"]*)\" and set the buy in value (\\d+) below zero$")
+   /* @When("^I create a new game with the name \"([^\"]*)\" and set the buy in value (\\d+) below zero$")
     public void iCreateANewGameWithTheNameAndSetTheBuyInValueBelowZero(String gameName, float newValue) throws Throwable {
         if (newValue < 0) {
             stepDefs.result = stepDefs.mockMvc.perform(get("/games/{id}", gameName).accept(MediaType.APPLICATION_JSON))
                     .andExpect(status().isConflict());
         }
-    }
+    }*/
 }

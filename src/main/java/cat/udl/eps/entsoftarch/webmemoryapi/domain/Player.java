@@ -6,6 +6,7 @@ import javax.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.hibernate.validator.constraints.Length;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 
@@ -14,17 +15,11 @@ import org.springframework.security.core.authority.AuthorityUtils;
 @EqualsAndHashCode(callSuper = true)
 public class Player extends User {
 
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public int playerId;
-
 	@Length(min=2, max=256)
 	public String Name;
 
-	public  float Currency;
-
-	public int getPlayerId(){return this.playerId;}
+	@Value("${Currency:0}")
+	public int Currency;
 
 	@Override
 	public String getUsername(){return this.Name;}

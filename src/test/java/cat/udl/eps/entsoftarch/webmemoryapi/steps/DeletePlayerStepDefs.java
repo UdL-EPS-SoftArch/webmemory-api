@@ -18,7 +18,7 @@ public class DeletePlayerStepDefs {
     @When("^I delete a player with username \"([^\"]*)\"$")
     public void iDeleteAPlayerWithUsername(String username) throws Throwable {
         stepDefs.result = stepDefs.mockMvc.perform(delete("/players/{username}", username).accept(MediaType.APPLICATION_JSON).with(AuthenticationStepDefs.authenticate()))
-                .andExpect(status().isNoContent());
+                .andDo(print());
     }
 
     @And("^The player with the username \"([^\"]*)\" has been deleted$")

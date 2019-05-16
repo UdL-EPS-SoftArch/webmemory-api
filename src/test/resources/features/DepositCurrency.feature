@@ -4,7 +4,7 @@ Feature: Deposit Currency
   I want to deposit currency to them
 
   Scenario: Deposit currency as an admin
-    Given I login as "admin" with password "password1"
+    Given I login as "admin" with password "password"
     And I register a new player with username "player1", email "newPlayer@webmemory.org" and password "password1"
     When I deposit 10 currency into the wallet of player with username "player1"
     Then The response code is 200

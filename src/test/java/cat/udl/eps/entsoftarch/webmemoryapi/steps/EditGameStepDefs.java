@@ -1,5 +1,7 @@
 package cat.udl.eps.entsoftarch.webmemoryapi.steps;
 
+import cucumber.api.PendingException;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,21 +16,23 @@ public class EditGameStepDefs {
     @Autowired
     private StepDefs stepDefs;
 
-    @When("^I set the buy-in value (\\d+) of game$")
-    public void ChangeGameCurrency(float newCurrency) throws Throwable {
+    @And("^I set the reward value (\\d+) of game with the id \"([^\"]*)\"$")
+    public void iSetTheRewardValueOfGameWithTheId(int reward, String id) throws Throwable {
         JSONObject game = new JSONObject();
-        game.put("currency", newCurrency);
+        game.put("Reward", reward);
         stepDefs.result = stepDefs.mockMvc.perform(
-                put("/games/{currency}", newCurrency).contentType(MediaType.APPLICATION_JSON).content(game.toString())
+                put("/games/{id}", id).contentType(MediaType.APPLICATION_JSON).content(game.toString())
                         .accept(MediaType.APPLICATION_JSON).with(AuthenticationStepDefs.authenticate()))
                 .andDo(print()).andExpect(status().isOk());
     }
 
-    @When("^I set the buy-in value (\\d+) of game \"([^\"]*)\" to less than zero$")
-    public void iChangeTheOfGameToLessThanZero(float newValue, String gameName) throws Throwable {
-        if (newValue < 0) {
-            stepDefs.result = stepDefs.mockMvc.perform(get("/games/{id}", gameName).accept(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isConflict());
-        }
+    @When("^I stop a game with the id \"([^\"]*)\"$")
+    public void iStopAGameWithTheName(String id) throws Throwable {
+        JSONObject game = new JSONObject();
+        game.put("gameFinished", true);
+        stepDefs.result = stepDefs.mockMvc.perform(
+                put("/games/{id}", id).contentType(MediaType.APPLICATION_JSON).content(game.toString())
+                        .accept(MediaType.APPLICATION_JSON).with(AuthenticationStepDefs.authenticate()))
+                .andDo(print()).andExpect(status().isOk());
     }
 }

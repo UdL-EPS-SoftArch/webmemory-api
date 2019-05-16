@@ -13,15 +13,20 @@ public class Game{
 
     @Id
     public String GameId;
-    @NotBlank
+
     public int BoardSeed;
-    @NotBlank
     public int Reward;
 
-    @NonNull
-    public int[][] cardNumbers = new int[6][6];
-    @NonNull
-    public boolean[][] cardOrientation = new boolean[6][6];
+    public int[][] cardNumbers;
+    //public int[][] cardNumbers = new int[6][6];
+    public boolean[][] cardOrientation;
+    //public boolean[][] cardOrientation = new boolean[6][6];
+
+    public GameDifficulty difficulty;
+
+    public boolean gameFinished;
+
+    public boolean isGameFinished() { return gameFinished; }
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     public ZonedDateTime CreatedAt, EndedAt;

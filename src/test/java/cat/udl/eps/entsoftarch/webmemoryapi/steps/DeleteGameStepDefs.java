@@ -15,9 +15,9 @@ public class DeleteGameStepDefs {
     private StepDefs stepDefs;
 
     @When("^I delete a game with id \"([^\"]*)\"$")
-    public void iDeleteAGameWithId(String gameName) throws Throwable {
+    public void iDeleteAGameWithId(String id) throws Throwable {
         stepDefs.result = stepDefs.mockMvc.perform(
-                delete("/games/{id}", gameName)
+                delete("/games/{id}", id)
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON)
                         .with(AuthenticationStepDefs.authenticate()))
@@ -25,9 +25,9 @@ public class DeleteGameStepDefs {
     }
 
     @And("^The game with id \"([^\"]*)\" does not exist$")
-    public void theGameWithIdDoesNotExist(String gameName) throws Throwable {
+    public void theGameWithIdDoesNotExist(String id) throws Throwable {
             stepDefs.result = stepDefs.mockMvc.perform(
-                    get("/games/{id}", gameName)
+                    get("/games/{id}", id)
                             .accept(MediaType.APPLICATION_JSON)
                             .with(AuthenticationStepDefs.authenticate()))
                     .andDo(print());
