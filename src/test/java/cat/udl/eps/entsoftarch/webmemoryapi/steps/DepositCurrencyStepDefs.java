@@ -28,7 +28,7 @@ public class DepositCurrencyStepDefs {
     public void iDepositCurrencyIntoTheWalletOfPlayerWithUsername(int currency, String username) throws Throwable {
         this.player = (Player) playerRepository.findByEmail(username);
         JSONObject playerObject = new JSONObject();
-        playerObject.put("Currency", this.player.getCurrency() + currency);
+        playerObject.put("escrow", currency);
 
         stepDefs.result = stepDefs.mockMvc.perform(patch("/players/{username}", username).contentType(MediaType.APPLICATION_JSON).content(playerObject.toString())
 						.accept(MediaType.APPLICATION_JSON).with(AuthenticationStepDefs.authenticate()))
@@ -39,7 +39,7 @@ public class DepositCurrencyStepDefs {
     public void iRemoveCurrencyIntoTheWalletOfPlayerWithUsername(float currency, String username) throws Throwable {
         this.player = (Player) playerRepository.findByEmail(username);
         JSONObject playerObject = new JSONObject();
-        playerObject.put("Currency", this.player.getCurrency() - currency);
+        playerObject.put("escrow", currency * -1);
 
         stepDefs.result = stepDefs.mockMvc.perform(
                 patch("/players/{username}", username).contentType(MediaType.APPLICATION_JSON).content(playerObject.toString())
@@ -48,11 +48,20 @@ public class DepositCurrencyStepDefs {
     }
 
     @And("^Player with username \"([^\"]*)\" has (\\d+) currency$")
-    public void playerWithUsernameHasCurrency(String username, float currency) throws Throwable {
+    public void playerWithUsernameHasCurrency(String username, int currency) throws Throwable {
         stepDefs.result = stepDefs.mockMvc.perform(
                 get("/players/{username}", username).accept(MediaType.APPLICATION_JSON).with(AuthenticationStepDefs.authenticate()))
-					.andDo(print())
-					.andExpect(status().isOk())
-					.andExpect(jsonPath("$.Currency", is(currency)));
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.Currency", is(currency)));
+    }
+
+    @And("^Player with username \"([^\"]*)\" has -(\\d+) currency$")
+    public void playerWithUsernameHasNegativeCurrency(String username, int currency) throws Throwable {
+        stepDefs.result = stepDefs.mockMvc.perform(
+                get("/players/{username}", username).accept(MediaType.APPLICATION_JSON).with(AuthenticationStepDefs.authenticate()))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.Currency", is(-currency)));
     }
 }

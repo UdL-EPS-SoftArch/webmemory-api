@@ -16,23 +16,23 @@ public class EditGameStepDefs {
     @Autowired
     private StepDefs stepDefs;
 
-    @And("^I set the reward value (\\d+) of game with the id \"([^\"]*)\"$")
-    public void iSetTheRewardValueOfGameWithTheId(int reward, String id) throws Throwable {
+    @And("^I set the reward value (\\d+) of game with the id (\\d+)$")
+    public void iSetTheRewardValueOfGameWithTheId(int reward, int id) throws Throwable {
         JSONObject game = new JSONObject();
         game.put("Reward", reward);
         stepDefs.result = stepDefs.mockMvc.perform(
                 put("/games/{id}", id).contentType(MediaType.APPLICATION_JSON).content(game.toString())
                         .accept(MediaType.APPLICATION_JSON).with(AuthenticationStepDefs.authenticate()))
-                .andDo(print()).andExpect(status().isOk());
+                .andDo(print());
     }
 
-    @When("^I stop a game with the id \"([^\"]*)\"$")
-    public void iStopAGameWithTheName(String id) throws Throwable {
+    @When("^I stop a game with the id (\\d+)$")
+    public void iStopAGameWithTheName(int id) throws Throwable {
         JSONObject game = new JSONObject();
         game.put("gameFinished", true);
         stepDefs.result = stepDefs.mockMvc.perform(
                 put("/games/{id}", id).contentType(MediaType.APPLICATION_JSON).content(game.toString())
                         .accept(MediaType.APPLICATION_JSON).with(AuthenticationStepDefs.authenticate()))
-                .andDo(print()).andExpect(status().isOk());
+                .andDo(print());
     }
 }

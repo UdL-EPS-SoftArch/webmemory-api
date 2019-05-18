@@ -32,6 +32,8 @@ public class PlayerEventHandler {
     @HandleBeforeSave
     public void handlePlayerPreSave(Player player){
         logger.info("Before updating: {}", player.toString());
+        player.setCurrency(player.getCurrency() + player.getEscrow());
+        player.setEscrow(0);
     }
 
     @HandleBeforeDelete

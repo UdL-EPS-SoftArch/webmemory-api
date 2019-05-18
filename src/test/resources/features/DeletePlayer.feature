@@ -18,4 +18,4 @@ Feature: Delete Player
   Scenario: Delete a player that doesn't exist as an admin
     Given I login as "admin" with password "password"
     When I delete a player with username "player1"
-    Then The response code is 204
+    Then The response code is 404

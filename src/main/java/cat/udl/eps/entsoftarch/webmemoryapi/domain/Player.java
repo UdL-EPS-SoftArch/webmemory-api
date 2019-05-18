@@ -21,10 +21,17 @@ public class Player extends User {
 	@Value("${Currency:0}")
 	public int Currency;
 
+	public int getCurrency(){ return this.Currency; }
+	public void setCurrency(int newCurrency){ this.Currency = newCurrency; }
+
+	//Using the escrow variable to determine the changes we'll be doing to the player's currency
+	public int escrow;
+
+	public int getEscrow() { return this.escrow; }
+	public void setEscrow(int newEscrow) { this.escrow = newEscrow; }
+
 	@Override
 	public String getUsername(){return this.Name;}
-
-	public float getCurrency(){return this.Currency;}
 
 	@Override
 	@Transient
