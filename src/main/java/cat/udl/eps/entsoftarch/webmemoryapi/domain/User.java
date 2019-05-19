@@ -30,10 +30,8 @@ public abstract class User extends UriEntity<String> implements UserDetails {
   /**
    * Identifier of user needs to be unique, otherwise it will generate conflicts.
    */
-  @Id
+  @Id @Length(min=2, max=256)
   private String username;
-
-
   /**
    * Email of user needs to be unique, otherwise it will generate conflicts and it can not be blank.
    */
@@ -49,21 +47,17 @@ public abstract class User extends UriEntity<String> implements UserDetails {
   @NotBlank @Length(min=8, max=256)
   private String password;
 
+  @Override
+  public String getId() { return username; }
 
   @Override
-  public String getId() {
-    return username;
-  }
-
-  @Override
-  public String getUsername(){
-    return username;
-  }
+  public String getUsername(){ return username; }
 
   @Override
   public String getPassword() {
     return password;
   }
+
 
   public void encodePassword() {
     this.password = passwordEncoder.encode(this.password);

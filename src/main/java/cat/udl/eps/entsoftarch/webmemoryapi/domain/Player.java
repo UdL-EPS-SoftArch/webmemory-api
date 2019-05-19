@@ -1,10 +1,12 @@
 package cat.udl.eps.entsoftarch.webmemoryapi.domain;
 
 import java.util.Collection;
-import javax.persistence.Entity;
-import javax.persistence.Transient;
+import javax.persistence.*;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.hibernate.validator.constraints.Length;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 
@@ -12,6 +14,24 @@ import org.springframework.security.core.authority.AuthorityUtils;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class Player extends User {
+
+	@Length(min=2, max=256)
+	public String Name;
+
+	@Value("${Currency:0}")
+	public int Currency;
+
+	public int getCurrency(){ return this.Currency; }
+	public void setCurrency(int newCurrency){ this.Currency = newCurrency; }
+
+	//Using the escrow variable to determine the changes we'll be doing to the player's currency
+	public int escrow;
+
+	public int getEscrow() { return this.escrow; }
+	public void setEscrow(int newEscrow) { this.escrow = newEscrow; }
+
+	@Override
+	public String getUsername(){return this.Name;}
 
 	@Override
 	@Transient
